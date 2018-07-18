@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define fi first
+#define se second
+#define pb push_back
+#define mod ( ( ((n) % (k)) + (k) ) % (k))
+#define forn(i,a,b) for(int i = a; i < b; i++)
+#define forr(i,a,b) for(int i = a; i >= b; i--)
+
+typedef long long ll;
+typedef long double ld;
+typedef pair<int,int> ii;
+typedef vector<int> vi;
+typedef vector<ii> vii;
+
+string str;
+
+bool mayu(char c){
+	int tmp = c-'A';
+	if(0 <= tmp && tmp <= 'Z'-'A')return true;
+	return false;
+}
+int dp(int pos,int mini){
+	int res = 0;
+	if(mini){
+		if(mayu(str[pos])){
+			res = min(res,1+d)
+		}
+	}else{
+
+	}
+	return res;
+}
+
+int main(){
+	ios_base::sync_with_stdio(0); cin.tie(0);
+	cin >> str;
+	cout << dp(0,0) << "\n";
+}

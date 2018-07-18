@@ -1,0 +1,44 @@
+
+#include <bits/stdc++.husing namespace std;
+
+int main(){
+	int n,m;
+	vector<int> n1;
+
+	cin >> n;
+	n1.push_back(0);
+	for(int i = 0; i < n; i++){
+		int tmp;
+		cin >> tmp;
+		n1.push_back(tmp);
+	}
+	cin >> m;
+	for(int i = 0; i < m; i++){
+		int tmp;
+		cin >> tmp;
+
+		int ini = 1, fin  = n;
+		while(ini <= fin){
+			int mitad = (ini+fin)/2;
+			int suma = 0;
+			for(int j = 0; j < mitad; j++){
+				suma += n1[j];
+			}
+			cout << "suma = " << suma << endl;
+			cout << ini << endl;
+			cout << fin << endl;
+			cout << mitad << endl;
+			if(tmp >= (suma+1) && tmp <= (suma+mitad)){
+				cout << mitad << endl;
+				break;
+			}
+			if(tmp < (suma+1)){
+				fin = mitad-1;
+			}
+			if(tmp > (suma+mitad)){
+				ini = mitad+1;
+			}
+		}
+	
+	}
+}

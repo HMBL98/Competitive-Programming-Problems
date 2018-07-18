@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define MAX_N 200000+10;
+#define MAX_K 50+10;
+typedef long long ll;
+int T,n,k;
+
+ll arreglo[MAX_N],dp[MAX_K][MAX_N];
+
+double costo(int a,int b){
+	int denomidador = 0;
+	double res = 0;
+	for(int i = a; i < b; i++){
+		denominador += arreglo[i];
+		res += (double)arreglo[i]/(double)denominador;
+	}
+	return res;
+}
+void computeDP(ll i, ll l1, ll l2,ll p1, ll p2){
+	if(l1 > l2)return;
+	ll mid = l1+l2 >> 1;
+	ll best = -1;
+	dp[i][mid] = 1<<30; dp[i][mid] *= -1;
+	ll indice = (mid < p2) ? mid : p2; 
+	for(int j = p1; j <= indice; j++){
+		ll nuevo = dp[i-1][j] + costo;
+		if(nuevo > dp[i][mid]){
+			dp[i][mid] = nuevo;
+			best = j;
+		}
+	}
+	computeDP(i,l1,mid-1,p1,best);
+	computeDP(i,mid+1,l2,best,p2);
+}
+
+int main(){
+	scanf("%d %d",&n,&k);
+	for(int i = 1; i <= n; i++) scanf("%d",&arreglo[i]);
+	for(int i = 1; i <= n; i++) dp[1][i] = costo(1,i);
+	//for(int i = 2; i <= k; i++) computeDP(i,1,n,1,n);
+	for(int i = 1; i <= k; i++)
+		for(int j = 1; j <= n; j++)
+			printf("%lld %lld %lld\n",i,j,dp[i][j]);
+	printf("%lld\n",dp[k][n]);
+}

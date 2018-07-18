@@ -1,0 +1,47 @@
+//10400 - Game Show Math
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<int> numero(100+10);
+int n,m,f;
+bool status;
+vector<char> respuesta;
+bool mover(int x){
+	if(x < -32000 || x > 32000)return false;
+	return true;
+}
+int dp(int pos,int total){
+	if(pos >= m){
+		status = true;
+		return (total == f) ? 1 : 0;
+	}
+	int res = 0;
+	if(!status && mover(total+numero[pos])){
+		res = max(res,dp(pos+1,total+numero[pos]));
+			
+	}
+	if(!status && mover(total-numero[pos])){
+		res = max(res,dp(pos+1,total-numero[pos]));
+	}
+	if(!status && mover(total*numero[pos])){
+		 res = max(res,dp(pos+1,total*numero[pos]));
+	}
+	if(!status && total%numero[pos] == 0 && mover(total/numero[pos])){
+		res = max(res,dp(pos+1,total/numero[pos]));
+	}
+	return res;
+}
+
+int main(){
+	cin >> n;
+	while(n--){
+		bool status = false;
+		cin >> m;
+		for(int i = 0; i < m; i++) cin >> numero[i];
+		cin >> f;
+		if(dp(1,numero[0])){
+			cout << "Yes" << endl;
+		}else cout << "NO EXPRESSION" << endl;
+	}
+
+}

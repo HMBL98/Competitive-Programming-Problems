@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+typedef long long ll;
+int n;
+
+ll dp(int pos,int total){
+	if(total == n)return 1;
+	if
+}
+int main(){
+	cin >> n;
+	cout << dp(1,0) << "\n";
+}

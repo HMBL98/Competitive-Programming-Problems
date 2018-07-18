@@ -1,0 +1,12 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define forn
+#define INF 1000000000
+#define MAX 100
+
+int graph[MAX][MAX];
+
+int main(){
+	
+}

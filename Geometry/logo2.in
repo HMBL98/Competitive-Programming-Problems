@@ -1,0 +1,29 @@
+4
+5
+fd 100
+lt 120
+fd ?
+lt 120
+fd 100
+7
+fd 4
+rt 90 
+fd 4
+rt 90
+fd 4
+rt ?
+fd 4
+6
+fd 3
+rt 90
+fd 4
+rt 90
+rt ?
+fd 5
+6
+fd ?
+rt 90
+fd 4
+rt 90
+rt 53
+fd 5

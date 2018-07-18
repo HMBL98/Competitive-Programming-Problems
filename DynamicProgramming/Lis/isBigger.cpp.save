@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int size,iq;
+struct info{
+	int s,iq;
+};
+vector<info> valores;
+int lis[1000+10];
+int atras[1000+10];
+
+int main(){
+	while(scanf("%d %d",&size,&iq) != EOF){
+		info tmp; tmp.s = size; tmp.iq = iq;
+		valores.push_back(tmp);
+	}
+	lis[0] = 1;
+	for(int i = 1; i < valores.size(); i++){
+		for(int j = 0; j < i; j++){
+			if(valores[j].s < valores[i].s &&  valores[j].iq > valores[i].iq){
+				if(lis[j] > lis[i]){
+					lis[i] = lis[j];
+					atras[i] = j;
+				}
+			}
+		}
+		lis[i]++;
+	}
+	int mayor = -1;
+	int indice;
+	for(int i = 0; i < valores.size(); i++){
+		if(lis[i] > mayor){
+			mayor = lis[i];
+			indice = i;
+		}
+	}
+	while
+}

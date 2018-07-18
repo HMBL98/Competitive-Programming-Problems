@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define MAX 2*100000+10
+#define MOD 1000000007
+
+typedef long long ll;
+ll C[MAX+1];
+
+/*ll binomialCoeff(int n,int k){
+	C[0] = 1; // nC0 is 1
+	for(int i = 1; i <= n; i++){
+			// Compute next row of pascal triangle using
+		        // the previous row
+			for(int j = min(i,k); j > 0; j--) C[j] = (C[j]%MOD+C[j-1]%MOD)%MOD;
+	}
+	return C[k];
+}*/
+ll multiplicar(ll a,ll b){
+	ll res = 0;
+	while(b){
+		if((b&1) == 1) ans = (a+ans)%MOD;
+		b >>= 1;
+		a =
+	}
+}
+int n;
+
+int main(){
+	cin >> n;
+	ll res = binomialCoeff(n+n-1,n);
+	res = (res%MOD+res%MOD)%MOD;
+	res = (res%MOD-n%MOD)%MOD;
+	cout << res << "\n";
+}

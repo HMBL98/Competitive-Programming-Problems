@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define MAX 5000+10
+typedef long long ll;
+int T,n,k;
+ll arreglo[MAX],dp[MAX],costo[MAX][MAX];
+
+void computeDP(ll g, ll i, ll j,ll l, ll r){
+	if(i > j)return;
+	ll mid = i+j >> 1;
+	ll best = l,
+	ll indice = (mid < r) ? mid : r;
+	for(int m = l; m <= indice; m++){
+		ll nuevo = dp[m-1][g-1]+
+	}
+
+}
+
+int main(){
+	scanf("%d",&T);
+	while(T--){
+		scanf("%d %d",&n,&k);
+		for(int i = 0; i < n; i++) scanf("%lld",&arreglo[i]);
+		memset(dp,0,sizeof dp);
+		memset(costo,0,sizeof dp);
+		for(int i = 0; i < n; i++)
+			for(int j = i; j < n; j++)
+				costo[i][j] |= arreglo[j];
+		for(int i = 0; i <= n; i++) dp[1][i] = costo[1][i];
+		for(int j = 0; j <= k; j++) computeDP(j,0,n,0,n);
+		printf("%lld\n",dp[k][n]);
+	}
+}

@@ -1,0 +1,20 @@
+//10731 - Test
+#include <bits/stdc++.h>
+using namespace std;
+
+typedef vector<int> vi;
+vector<vi> grafo;
+
+char letras[5];
+
+int n;
+
+int main(){
+	while(cin >> n,n){
+o
+		for(int i = 0; i < 5; i++){
+			cin >> letras[i];
+		}
+		
+	}
+}

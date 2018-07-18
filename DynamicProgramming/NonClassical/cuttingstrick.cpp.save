@@ -1,0 +1,19 @@
+//10003 - Cutting Sticks
+#include <bits/stdc++.h>
+using namespace std;
+
+int l,c,cortes[50+10];
+
+int dp(int i,int j){
+	if(i+1 == j) return 0;
+	for()	
+}
+int main
+	while(cin >> l,l){
+		cin >> m;
+		cortes[0] = 0;
+		for(int i = 0; i < m; i++) cin >> cortes[i];
+		cortes[m] = l;
+	}
+}
+
